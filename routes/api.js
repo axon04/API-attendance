@@ -23,11 +23,17 @@ const __dirname = new URL('.', import.meta.url).pathname;
 
 import fetchRecord from "../controllers/fetchRecord.js";
 import fetchStudent from "../controllers/fetchStudent.js";
+import {postRecord, deleteRecord} from "../controllers/postdelRecord.js";
 
 router.route('/records/:date/:code')
     .get(fetchRecord);
-
+    
 router.route('/students/:code')
     .get(fetchStudent);
+    
+router.route('/records')
+    .post(postRecord)
+    .delete(deleteRecord);
+
 
 export default router;

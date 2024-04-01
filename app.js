@@ -8,7 +8,8 @@ import apiRouter from "./routes/api.js";
 
 // Express and bodyparser basic configuration
 const app = Express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 // setting view engine
 app.set('view engine', 'ejs');
